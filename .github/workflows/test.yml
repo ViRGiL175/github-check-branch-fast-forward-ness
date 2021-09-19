@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: Test
-        uses: ViRGiL175/check-branch-fast-forward-ness@latest
+        uses: ViRGiL175/check-branch-fast-forward-ness@main
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
         

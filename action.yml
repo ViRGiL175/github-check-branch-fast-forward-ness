@@ -8,10 +8,8 @@ inputs:
     required: true
     default: 'World'
   head-branch-ref:
-    description: '${{ github.head_ref }}'
     required: true
   base-branch-ref:
-    description: '${{ github.base_ref }}'
     required: true
     
 outputs:

@@ -1,0 +1,13 @@
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - uses: actions/checkout@v2
+      - id: Test
+        uses: actions/hello-world-composite-action@latest
+      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+        shell: bash
+        

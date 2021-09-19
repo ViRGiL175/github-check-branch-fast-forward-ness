@@ -7,6 +7,12 @@ inputs:
     description: 'Who to greet'
     required: true
     default: 'World'
+  head-branch-ref:
+    description: '${{ github.head_ref }}'
+    required: true
+  base-branch-ref:
+    description: '${{ github.base_ref }}'
+    required: true
     
 outputs:
   random-number:
@@ -23,6 +29,6 @@ runs:
       shell: bash
     - run: git fetch
       shell: bash
-    - run: git merge-base origin/${{ github.base_ref }} origin/${{ github.head_ref }} --is-ancestor
+    - run: git merge-base origin/${{ inputs.base-branch-ref }} origin/${{ inputs.head-branch-ref }} --is-ancestor
       shell: bash
       

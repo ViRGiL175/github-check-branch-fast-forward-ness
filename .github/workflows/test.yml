@@ -1,16 +1,11 @@
-on: [push]
+on: [pull_request]
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Test running
     steps:
       - uses: actions/checkout@v2
-      - id: Test
-        uses: ViRGiL175/check-branch-fast-forward-ness@main
-        with:
-          base-branch-ref: ${{ github.base_ref }}
-          head-branch-ref: ${{ github.head_ref }}
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
-        shell: bash
+      - name: Test running
+        uses: ViRGiL175/check-branch-fast-forward-ness@dev
         

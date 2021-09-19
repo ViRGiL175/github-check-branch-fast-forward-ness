@@ -1,32 +1,31 @@
 name: Branch fast-forward-ness checker
 
-description: Greet someone
+description: Check if Pull Request branch can be easily fast-forwarded into main branch
 
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
-  head-branch-ref:
-    required: true
-  base-branch-ref:
-    required: true
-    
-outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-id }}
+  remote-name:
+    description: Remote name, if differents from "origin"
+    required: false
+    default: "origin"
     
 runs:
   using: "composite"
   steps:
-    - run: echo Hello ${{ inputs.who-to-greet }}.
+    - name: Fetching Main branch ${{ github.base_ref }}
+      run: |
+        git fetch ${{ inputs.remote-name }} ${{ github.base_ref }} && \
+        git tag "→-target-branch-←" ${{ inputs.remote-name }}/${{ github.base_ref }}
       shell: bash
-    - id: random-number-generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"
+    - name: Fetching Pull Request branch ${{ github.head_ref }}
+      run: | 
+        git fetch ${{ inputs.remote-name }} ${{ github.head_ref }} && \
+        git tag "→-pull-request-branch-←" ${{ inputs.remote-name }}/${{ github.head_ref }}
       shell: bash
-    - run: git fetch
-      shell: bash
-    - run: git merge-base origin/${{ inputs.base-branch-ref }} origin/${{ inputs.head-branch-ref }} --is-ancestor
+    - name: Checking branch fast-forward-ness
+      run: |
+        git merge-base ${{ inputs.remote-name }}/${{ github.base_ref }} ${{ inputs.remote-name }}/${{ github.head_ref }} --is-ancestor && \
+        echo "Branch is ready for merging 👍" && exit 0 || \
+        echo "Branch is not ready for merging yet. Check your tree to investigate 👇" && \
+        git log --graph --abbrev-commit --decorate --simplify-by-decoration --all --format=format:'%C(bold blue)%h%C(reset) - %C(yellow)%aD%C(reset) %C(dim yellow)(%ar)%C(reset)%C(auto)%+d%n %<(80,trunc)' && exit 1
       shell: bash
       

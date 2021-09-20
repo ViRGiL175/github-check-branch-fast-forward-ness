@@ -2,6 +2,10 @@ name: Branch fast-forward-ness checker
 
 description: Check if Pull Request branch can be easily fast-forwarded into main branch
 
+branding:
+  icon: 'fast-forward'  
+  color: 'orange'
+
 inputs:
   remote-name:
     description: Remote name, if differents from "origin"

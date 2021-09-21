@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ViRGiL175/check-branch-fast-forward-ness@latest
+      - uses: ViRGiL175/check-branch-fast-forward-ness@main
 ```
 
 Now your Pull Requests will be tested on fast-forward-ness.
@@ -62,7 +62,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ViRGiL175/check-branch-fast-forward-ness@latest
+      - uses: ViRGiL175/check-branch-fast-forward-ness@main
         with:
           remote-name: different-remote-name
 ```

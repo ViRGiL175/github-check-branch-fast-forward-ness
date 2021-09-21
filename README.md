@@ -75,14 +75,12 @@ Feel free to do any Forks and Pull Requests! For sure there are tonnes of bugs a
 
 # Links
 
-Inspiration:
+<img src="https://unsplash.com/photos/eYbncUCBZm0/download?force=true&w=640" width="300" align=right>
 
-[https://gist.github.com/briceburg/3f41f09bdc478d21bcf8](https://gist.github.com/briceburg/3f41f09bdc478d21bcf8)
+Inspiration on branch fast-forward-ness: </br> [https://gist.github.com/briceburg/3f41f09bdc478d21bcf8](https://gist.github.com/briceburg/3f41f09bdc478d21bcf8)
 
-My alias for the nice performing of the commit tree:
+My alias for the nice performing of the commit tree: </br> [https://gist.github.com/ViRGiL175/fad0e017c4bb638584c7233717b5122b](https://gist.github.com/ViRGiL175/fad0e017c4bb638584c7233717b5122b)
 
-[https://gist.github.com/ViRGiL175/fad0e017c4bb638584c7233717b5122b](https://gist.github.com/ViRGiL175/fad0e017c4bb638584c7233717b5122b)
+Social preview: </br> [Photo by lilartsy on Unsplash](https://unsplash.com/photos/eYbncUCBZm0)
 
-Social preview:
 
-[Photo by lilartsy on Unsplash](https://unsplash.com/photos/eYbncUCBZm0)

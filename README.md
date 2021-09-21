@@ -16,7 +16,7 @@ Using this method can reassure you that the Pull Request Branch was tested in th
 
 Pretty simple and fast ≈ 6 ms.
 
-Action is checking Pull Request Branch's fast-forward-ness, which means it can be easily merged, or ready to be merged with your main Branch. To do this, Action using this native git command:
+Action is checking Pull Request Branch's fast-forward-ness, which means it can be easily merged, or ready to be merged with your main Branch. To do this, Action uses this native git command:
 
 ```
 $ git merge-base --is-ancestor
@@ -48,7 +48,7 @@ jobs:
 
 Now your Pull Requests will be tested on fast-forward-ness.
 
-If your remote's name isn't "origin", you can use in parameter `remote-name` parameter to set the custom remote's name:
+If your remote's name isn't "origin", you can use `remote-name` parameter to set the custom remote's name:
 
 ```yaml
 name: Check branch fast-forward-ness

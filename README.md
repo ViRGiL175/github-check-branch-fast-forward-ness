@@ -37,6 +37,7 @@ name: Check branch fast-forward-ness
 on:
   pull_request:
     branches: [main]
+    types: [review_requested]
 
 jobs:
   check-fast-forward-ness:
@@ -56,6 +57,7 @@ name: Check branch fast-forward-ness
 on:
   pull_request:
     branches: [main]
+    types: [review_requested]
 
 jobs:
   check-fast-forward-ness:
